@@ -1,16 +1,15 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: "form-signin", method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<h2 class="form-signin-heading">Forgot Password?</h2>
+    <%= f.label :email, 'Email Address', class: 'sr-only' %>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Email Address" %>
+
+  <div class="actions" style="margin-bottom: 10px">
+    <%= f.submit "Reset My Password", class: 'btn btn-lg btn-primary btn-block' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div> <%= link_to('Sign Up', new_user_registration_path) %> <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px">//</span>
+<%= link_to('Sign In', new_user_session_path) %> </div>
