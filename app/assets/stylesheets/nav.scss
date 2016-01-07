@@ -1,13 +1,24 @@
-.nav {
+.container {
   width: 100%;
   background-color: #FFFFFF;
 }
 
+.masthead-brand {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 4px;
+  color: #000000;
+}
+
+.masthead-nav {
+  text-align: right;
+}
+
 .masthead-nav > li {
   display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 2px;
 }
 
 .masthead-nav > li > a {
@@ -15,17 +26,15 @@
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #000000; /* IE8 proofing */
-  border-bottom: 2px solid transparent;
+  color: #000000;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #000000
+  border-color: #000000
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
   color: #000000;
-  border-bottom-color: #000000;
 }
