@@ -1,7 +1,6 @@
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: "form-signin", method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-<h2 class="form-signin-heading">Forgot Password?</h2>
     <%= f.label :email, 'Email Address', class: 'sr-only' %>
     <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Email Address" %>
 
@@ -11,5 +10,5 @@
 
 <% end %>
 
-<div> <%= link_to('Sign Up', new_user_registration_path) %> <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px">//</span>
+<div> <%= link_to('Sign Up', new_user_registration_path) %> <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
 <%= link_to('Sign In', new_user_session_path) %> </div>
