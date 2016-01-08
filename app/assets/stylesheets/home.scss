@@ -1,3 +1,43 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.feed {
+  margin: auto;
+  width: 60%;
+  border-left: 3px solid #FFFFFF;
+  border-right: 3px solid #FFFFFF;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.well {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  width: 80%;
+  color: #000000;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.well-sm {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.well > a,
+.well > a:hover,
+.well > a:focus {
+  color: #000000;
+}
