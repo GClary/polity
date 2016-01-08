@@ -11,6 +11,13 @@
   color: #000000;
 }
 
+.masthead-brand > a,
+.masthead-brand > a:hover,
+.masthead-brand > a:focus {
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
 .masthead-nav {
   text-align: right;
 }
@@ -31,11 +38,5 @@
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-color: #000000;
   font-weight: bold;
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #000000;
 }

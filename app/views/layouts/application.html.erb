@@ -11,7 +11,7 @@
 <% if user_signed_in? %>
 <div class="container"</div>
   <nav>
-  <div class="nav masthead-brand">POLITY <span style="font-size: 12px">//a Wilson Center project</div>
+  <div class="nav masthead-brand"><%=link_to 'POLITY', authenticated_root_path%> <span style="font-size: 12px">//a Wilson Center project</div>
   <ul class="nav masthead-nav">
      <li><a href="#">FAQs</a></li>
      <li><a href="#">My Account</a></li>

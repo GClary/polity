@@ -1,0 +1,6 @@
+<div class='feed'>
+<% @answers.each do |a| %>
+  <div class='well'><%= a.body%></div>
+  <div class='well well-sm'>+<%=a.upvote %>, -<%=a.downvote %></div>
+<% end %>
+</div>
