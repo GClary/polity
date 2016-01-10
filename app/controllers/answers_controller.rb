@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   def index
-    @answers = Answer.find(params[:question_id])
+    @answers = Answer.where(:question_id => params[:question_id])
+    @question = Question.find(params[:question_id])
   end
 
   def new
@@ -11,7 +12,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
 
     if @answer.save
-      redirect to question_answers_path
+      redirect_to question_answers_path
     else
       render 'new'
     end

@@ -1,0 +1,11 @@
+<%= form_for(@question, html: {class: 'form-signin', style: 'padding-bottom: 5px'}) do |f| %>
+  <%= f.label :title, class: 'sr-only' %>
+  <%= f.text_field :title, class: 'form-control', placeholder: "My question, in brief:" %>
+  <br>
+  <br>
+  <%= f.label :description, class: 'sr-only' %>
+  <%= f.text_area :description, class: 'form-control', size: '40x10', placeholder: 'You can elaborate here.' %>
+  <%= f.submit 'Submit', class: 'btn btn-lg btn-primary btn-block', style: 'margin-top: 5px' %>
+<% end %>
+
+<%= link_to 'Cancel', authenticated_root_path, class: 'cancel btn btn-lg btn-primary btn-block' %>

@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect to authenticated_root_path
+      redirect_to authenticated_root_path
     else
       render 'new'
     end

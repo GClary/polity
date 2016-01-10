@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root to: redirect('users/sign_in')
 
+  resources :questions
+
   resources :questions do
     resources :answers
   end
