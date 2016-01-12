@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   def index
-    @question = Question.where(:id => params[:question_id])
+    @question = Question.find(params[:question_id])
 
     if params[:sort_time]
       @answers = Answer.where(:question_id => params[:question_id]).sort_by{ |a| a.created_at}.reverse!
