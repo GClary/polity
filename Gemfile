@@ -18,6 +18,7 @@ gem 'devise'
 gem 'cancan'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

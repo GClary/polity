@@ -19,7 +19,9 @@
      <li>
        <%= link_to('Ask a Question', new_question_path)%>
      </li>
-     <li><a href="#">My Account</a></li>
+     <li>
+       <%= link_to "My Account", edit_user_registration_path %>
+     </li>
      <li>
        <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
      </li>
