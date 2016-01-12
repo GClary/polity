@@ -9,7 +9,8 @@
 <% else %>
   <% @answers.each do |a| %>
     <div class='well'><%= a.description%></div>
-    <div class='well well-sm'>+<%=a.upvote %>, -<%=a.downvote %></div>
+    <div class='well well-sm'>
+    <%= link_to '+ ', like_question_answer_path(@question, a), method: :put %><%=a.get_upvotes.size %> upvotes<span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold"> //</span><%= link_to '- ', dislike_question_answer_path(@question, a), method: :put %><%=a.get_downvotes.size%> downvotes<span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold"> //</span> <%= link_to('Answer', new_question_answer_path(@question[:id])) %></div>
   <% end %>
 <% end %>
 

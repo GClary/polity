@@ -4,6 +4,20 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
   end
 
+  def upvote
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
+    @answer.upvote_by current_user
+    redirect_to question_answers_path
+  end
+
+  def downvote
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
+    @answer.downvote_by current_user
+    redirect_to question_answers_path
+  end
+
   def new
     @answer = Answer.new
   end
