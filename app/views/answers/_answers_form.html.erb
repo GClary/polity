@@ -1,3 +1,12 @@
+<div class='feed'>
+
+<div class='well'>
+  <span style="font-weight:bold; font-size: 16px"><%= @question.title %></span>
+</div>
+<div class='well'>
+  <%= @question.description %>
+</div>
+
 <%= form_for( @answer, url: question_answers_path(params[:question_id]), html: {class: 'form-signin', style: 'padding-bottom: 5px'}) do |f| %>
   <%= f.label :description, class: 'sr-only' %>
   <%= f.text_area :description, class: 'form-control', size: '40x10', placeholder: 'Well actually...' %>
