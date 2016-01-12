@@ -15,12 +15,12 @@
   <div class="nav masthead-brand"><%=link_to 'POLITY', authenticated_root_path%> <span style="font-size: 12px">//a Wilson Center project</div>
   <ul class="nav masthead-nav">
      <li>
-       <a href="#">About</a></li>
+       <%= link_to('About', about_path) %>
      <li>
        <%= link_to('Ask a Question', new_question_path)%>
      </li>
      <li>
-       <%= link_to "My Account", edit_user_registration_path %>
+       <%= link_to('My Account', edit_user_registration_path) %>
      </li>
      <li>
        <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>

@@ -14,6 +14,9 @@ class HomeController < ApplicationController
     else
       @questions = Question.all
     end
-
   end
+
+  def about
+  end
+
 end
