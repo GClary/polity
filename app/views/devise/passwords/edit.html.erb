@@ -3,7 +3,6 @@
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-<h2 class="form-signin-heading">Change Your Password</h2>
     <%= f.label :password, class: 'sr-only'%>
     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
 
@@ -15,6 +14,6 @@
   <% end %>
 
   <div class="actions" style="margin-top: 10px">
-    <%= f.submit "Change My Password" %>
+    <%= f.submit "Change My Password", class: 'btn btn-lg btn-primary btn-block' %>
   </div>
 <% end %>
