@@ -1,9 +1,9 @@
 <div class="button-column">
   <div class="well sort-button">
-  <%= link_to 'Sort by Most Recent', question_answers_path(params.merge(:sort_time => true)) %>
+  <%= link_to 'Sort by Most Recent', question_answers_path(params.merge(:sort_time => true, :sort_votes => nil)) %>
   </div>
   <div class="well sort-button">
-  <%= link_to 'Sort by Most Popular', question_answers_path(params.merge(:sort_votes => true)) %>
+  <%= link_to 'Sort by Most Popular', question_answers_path(params.merge(:sort_votes => true, :sort_time => nil)) %>
   </div>
 </div>
 

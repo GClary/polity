@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
     if params[:sort_time]
       @answers = Answer.where(:question_id => params[:question_id]).sort_by{ |a| a.created_at}.reverse!
     elsif params[:sort_votes]
-      @answers = Answer.where(:question_id => params[:question_id]).sort_by{|a| a.weighted_average}.reverse!
+      @answers = Answer.where(:question_id => params[:question_id]).sort_by{|a| a.cached_weighted_score}.reverse!
     else
       @answers = Answer.where(:question_id => params[:question_id])
     end
