@@ -1,6 +1,11 @@
 <div class='feed'>
 
-<div class='well'><%= @question.title %></div>
+<div class='well'>
+  <span style="font-weight:bold; font-size: 16px"><%= @question.title %></span>
+</div>
+<div class='well'>
+  <%= @question.description %>
+</div>
 
 <% if @answers.count == 0 %>
   <div class='well well-sm'>This question hasn't been answered <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span> <%= link_to('Answer', new_question_answer_path(@question[:id])) %>
