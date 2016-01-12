@@ -1,4 +1,17 @@
+<div class="button-column">
+  <div class="well sort-button">
+  <%= link_to 'Sort by Most Recent', authenticated_root_path(:sort_time => true) %>
+  </div>
+  <div class="well sort-button">
+  <%= link_to 'Sort by Most Popular', authenticated_root_path(:sort_answers => true) %>
+  </div>
+  <div class="well sort-button">
+  <%= link_to 'My Questions', authenticated_root_path(:mine => true) %>
+  </div>
+</div>
+
 <div class='feed'>
+
 <% @questions.each do |q| %>
   <div class='well'><%= q.title %></div>
   <div class='well well-sm'>
@@ -9,4 +22,5 @@
     <%= link_to('Answer', new_question_answer_path(q[:id])) %>
   </div>
 <% end %>
+
 </div>

@@ -1,7 +1,14 @@
 class AnswersController < ApplicationController
   def index
-    @answers = Answer.where(:question_id => params[:question_id])
     @question = Question.find(params[:question_id])
+
+    if params[:sort_time]
+      @answers = Answer.where(:question_id => params[:question_id]).sort_by{ |a| a.created_at}.reverse!
+    elsif params[:sort_votes]
+      @answers = Answer.where(:question_id => params[:question_id]).sort_by{|a| a.weighted_average}.reverse!
+    else
+      @answers = Answer.where(:question_id => params[:question_id])
+    end
   end
 
   def upvote

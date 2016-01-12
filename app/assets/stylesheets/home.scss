@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.button-column {
+  float: right;
+  clear: right;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+.sort-button {
+  padding: 5px;
+  width: 200px;
+}
+
 .feed {
   margin: auto;
   width: 60%;
@@ -12,16 +24,19 @@
 }
 
 .well {
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 0px;
-  width: 80%;
   word-wrap:break-word;
   color: #000000;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+
+.feed > .well {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .well-sm {
