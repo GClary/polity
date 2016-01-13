@@ -10,8 +10,7 @@ Rails.application.configure do
   domain:               'protected-forest-7218.herokuapp.com',
   user_name:            ENV["GMAIL_USERNAME"],
   password:             ENV["GMAIL_PASSWORD"],
-  authentication:       'plain',
-  openssl_verify_mode:  'none',
+  authentication:       'login',
   enable_starttls_auto: true  }
 
   # Code is not reloaded between requests.
