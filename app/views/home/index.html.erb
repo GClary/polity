@@ -14,13 +14,24 @@
 
 <% @questions.each do |q| %>
   <div class='well'><%= q.title %></div>
-  <div class='well well-sm'>
+  <% if q.answers_count == 1 %>
+    <div class='well well-sm'>
+    This question has 1 response so far
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('View Answers', question_answers_path(q[:id])) %>
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('Answer', new_question_answer_path(q[:id])) %>
+    </div>
+
+  <% else %>
+    <div class='well well-sm'>
     This question has <%= q.answers_count %> responses so far
     <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
     <%= link_to('View Answers', question_answers_path(q[:id])) %>
     <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
     <%= link_to('Answer', new_question_answer_path(q[:id])) %>
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
 </div>
