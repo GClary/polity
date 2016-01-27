@@ -36,7 +36,7 @@
 
   <% if can? :destroy, q %>
     <div class='well well-sm'>
-    <%= link_to "Delete", {:controller => :questions, :action => 'destroy', :id => q.id}, :method => :destroy %>
+    <%= link_to "Delete", {:controller => :questions, :action => 'destroy', :id => q.id}, :method => :delete %>
     </div>
   <% end %>
 
