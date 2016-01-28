@@ -55,8 +55,8 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-    Answer.find(params[:id]).delete
-    redirect_to authenticated_root_path
+    Answer.find(params[:id]).destroy
+    redirect_to question_answers_path
   end
 
   private
