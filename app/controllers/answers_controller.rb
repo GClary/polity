@@ -54,6 +54,11 @@ class AnswersController < ApplicationController
     end
   end
 
+  def destroy
+    Answer.find(params[:id]).delete
+    redirect_to authenticated_root_path
+  end
+
   private
 
   def answer_params
