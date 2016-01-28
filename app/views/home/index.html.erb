@@ -13,9 +13,45 @@
 <div class='feed'>
 
 <% @questions.each do |q| %>
+
+<% if can? :destroy, q %>
+
   <div class='well'><%= q.title %></div>
 
   <% if q.answers_count == 1 %>
+
+    <div class='well'>
+    This question has 1 response so far
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('View Answers', question_answers_path(q[:id])) %>
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('Answer', new_question_answer_path(q[:id])) %>
+    </div>
+
+    <div class='well well-sm'>
+    <%= link_to "Delete", {:controller => :questions, :action => 'destroy', :id => q.id}, :method => :delete %>
+    </div>
+
+  <% else %>
+
+    <div class='well'>
+    This question has <%= q.answers_count %> responses so far
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('View Answers', question_answers_path(q[:id])) %>
+    <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
+    <%= link_to('Answer', new_question_answer_path(q[:id])) %>
+    </div>
+
+    <div class='well well-sm'>
+    <%= link_to "Delete", {:controller => :questions, :action => 'destroy', :id => q.id}, :method => :delete %>
+    </div>
+
+  <% end %>
+
+<% else %>
+
+  <% if q.answers_count == 1 %>
+
     <div class='well well-sm'>
     This question has 1 response so far
     <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
@@ -25,6 +61,7 @@
     </div>
 
   <% else %>
+
     <div class='well well-sm'>
     This question has <%= q.answers_count %> responses so far
     <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
@@ -32,12 +69,7 @@
     <span style="color: rgb(51, 122, 183); padding-left: 2px; padding-right: 2px; font-weight: bold">//</span>
     <%= link_to('Answer', new_question_answer_path(q[:id])) %>
     </div>
-  <% end %>
 
-  <% if can? :destroy, q %>
-    <div class='well well-sm'>
-    <%= link_to "Delete", {:controller => :questions, :action => 'destroy', :id => q.id}, :method => :delete %>
-    </div>
   <% end %>
 
 <% end %>
