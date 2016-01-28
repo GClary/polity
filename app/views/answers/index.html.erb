@@ -5,6 +5,9 @@
   <div class="well sort-button">
   <%= link_to 'Sort by Most Popular', question_answers_path(params.merge(:sort_votes => true, :sort_time => nil)) %>
   </div>
+  <div class="well sort-button">
+  <%= link_to 'Return to Questions', authenticated_root_path %>
+  </div>
 </div>
 
 
